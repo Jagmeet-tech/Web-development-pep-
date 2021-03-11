@@ -1,0 +1,17 @@
+{
+  "name": "cricbuzz",
+  "version": "1.0.0",
+  "description": "It is related to automation and web scrapping",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chromedriver": "^89.0.0",
+    "install": "^0.13.0",
+    "npm": "^7.6.2",
+    "selenium-webdriver": "^4.0.0-beta.1"
+  }
+}
