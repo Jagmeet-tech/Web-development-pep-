@@ -34,6 +34,18 @@ async function main () {
         }
     }
     console.log(batsmenScorecard);
+    let inningsBowlerRows = await tables[1].findElements(wd.By.css(".cb-col.cb-col-100.cb-scrd-itms"));
+    for(let i = 0; i < inningsBowlerRows.length; i++) {
+        let columns = await inningsBowlerRows[i].findElements(wd.By.css("div"));
+        if(columns.length == 8) {
+            let data = {};
+            for(let j = 0; j < columns.length; j++) {
+                data[bowlerKeys[j]] = await columns[j].getAttribute("innerText");
+            }
+            bowlerScorecard.push(data);
+        }
+    }
+    console.log(bowlerScorecard);
     await browser.close();
  }
 
