@@ -13,15 +13,48 @@
 // temp();
 // console.log("hello2");
 
-async function temp() {
-    console.log(1);
-    setTimeout(function(){
-        console.log(2);
-    },1000);
-    console.log(3);
-    setTimeout(function() {
-        console.log(4);
-    },1500);
+// async function temp() {
+//     console.log(1);
+//     setTimeout(function(){
+//         console.log(2);
+//     },1000);
+//     console.log(3);
+//     setTimeout(function() {
+//         console.log(4);
+//     },1500);
+// }
+// temp();
+// console.log(5);
+
+let input = {
+    obj1: {
+        obj2: {
+            two: 2,
+            one: 1
+        }
+    },
+    obj4: {
+        obj3: {
+            three: 3
+        }
+    }
 }
-temp();
-console.log(5);
+
+function flatten(obj) {
+    let result = {};
+    for(let i in obj) {
+        if(typeof(obj[i]) == "object") {
+            let temp = flatten(obj[i]);
+            for(j in temp) {
+                result[i + "." + j] = temp[j];
+                //console.log(result);
+            }
+        } else {
+            result[i] = obj[i];
+            //console.log(result);
+        }
+    }
+    return result;
+}
+
+console.log(flatten(input));
