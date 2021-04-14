@@ -1,0 +1,15 @@
+{
+  "name": "youtube-scraper-hackathon",
+  "version": "1.0.0",
+  "description": "This is project related to automation and scraping",
+  "main": "youtubeScraper.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "puppeteer": "^8.0.0"
+  }
+}
